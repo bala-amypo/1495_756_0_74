@@ -1,9 +1,10 @@
-package com.example.demo;
+package com.example.demo.service;
 
-import java.util.List;
-
+import com.example.demo.entity.LocationEntity;
+import com.example.demo.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class LocationServiceImpl implements LocationService {
@@ -12,12 +13,12 @@ public class LocationServiceImpl implements LocationService {
     private LocationRepository locationRepository;
 
     @Override
-    public LocationEntity createlocation(LocationEntity le) {
-        return locationRepository.save(le);
+    public LocationEntity createLocation(LocationEntity location) {
+        return locationRepository.save(location);
     }
 
     @Override
-    public List<LocationEntity> getalllocation() {
+    public List<LocationEntity> getAllLocation() {
         return locationRepository.findAll();
     }
 }
