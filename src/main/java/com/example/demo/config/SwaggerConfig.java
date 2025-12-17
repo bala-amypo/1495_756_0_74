@@ -4,7 +4,6 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.servers.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import java.util.List;
 
 @Configuration
@@ -14,8 +13,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .servers(List.of(
-                        // Use relative URL so Swagger works automatically on your cloud domain
-                        new Server().url("/")
+                        new Server().url("/") // Use relative path
                 ));
     }
 }
