@@ -25,4 +25,10 @@ public class LocationController {
     public List<LocationEntity> show() {
         return locationService.getAllLocation();
     }
+
+    // Optional root mapping to avoid Whitelabel
+    @GetMapping("/")
+    public String home() {
+        return "API is running. Use /location/addlocation or /location/showlocation";
+    }
 }

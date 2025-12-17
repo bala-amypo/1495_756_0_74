@@ -16,17 +16,14 @@ public class LocationEntity {
     private Double latitude;
     private Double longitude;
 
-    // Default constructor
     public LocationEntity() {}
 
-    // Parameterized constructor
     public LocationEntity(String name, Double latitude, Double longitude) {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    // Getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
