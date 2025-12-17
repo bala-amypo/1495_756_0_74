@@ -1,4 +1,10 @@
-import io.swagger.v3.oas.annotations.Operation;
+package com.example.demo.controller;
+
+import com.example.demo.entity.LocationEntity;
+import com.example.demo.service.LocationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/location")
@@ -7,13 +13,11 @@ public class LocationController {
     @Autowired
     private LocationService locationService;
 
-    @Operation(summary = "Add a new location")
     @PostMapping("/addlocation")
     public LocationEntity add(@RequestBody LocationEntity le) {
         return locationService.createLocation(le);
     }
 
-    @Operation(summary = "Get all locations")
     @GetMapping("/showlocation")
     public List<LocationEntity> show() {
         return locationService.getAllLocation();
